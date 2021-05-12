@@ -1,0 +1,649 @@
+
+{%  extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestLabel">Make an Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action=" {% url 'appointment' %} ">
+           {% csrf_token %}
+            <div class="form-group">
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <input type="text" class="form-control" name="your-name" id="appointment_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <input type="text" class="form-control" name="your-email" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <input type="text" class="form-control appointment_date"  name="your-date" placeholder="Date">
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <input type="text" class="form-control appointment_time"  name="your-time" placeholder="Time">
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="form-group">
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <textarea name="your-message" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <section class="ftco-section ftco-services">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Our Service Keeps you Smile</h2>
+            <p>A good dentist can tell you about your overall health just by looking at your mouths such as nutritional deficiencies, illnesses, and other infections. Things such as the color of your tongue, bad breath, and dry mouth can tell a lot about your health issues which may affect your entire body.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-tooth-1"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Teeth Whitening</h3>
+                <p>Tooth whitening or tooth bleaching is the process of lightening the color of human teeth. Whitening is often desirable when teeth become yellowed over time for a number of reasons, and can be achieved by changing the intrinsic or extrinsic color of the tooth enamel.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-dental-care"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Teeth Cleaning</h3>
+                <p>Teeth cleaning is part of oral hygiene and involves the removal of dental plaque from teeth with the intention of preventing cavities, gingivitis, and periodontal disease.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-tooth-with-braces"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Quality Brackets</h3>
+                <p>We work in close collaboration with our doctors, to guarantee optimal results. Our goal, like that of our clients, is to develop progressive, clinical-quality products.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-anesthesia"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Modern Anesthetic</h3>
+                <p>Unlike the anaesthetists of yesteryears, who utilized a single agent like ether or chloroform alone for anaesthesia, the present day anaesthetists use different drugs for specific effects.</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+      <div class="container-wrap mt-5">
+      	<div class="row d-flex no-gutters">
+      		<div class="col-md-6 img" style="background-image: url({%  static 'website/images/dcare.jpg'  %});">
+      		</div>
+      		<div class="col-md-6 d-flex">
+      			<div class="about-wrap">
+      				<div class="heading-section heading-section-white mb-5 ftco-animate">
+		            <h2 class="mb-2">Dentacare with a personal touch</h2>
+		            <p>We focus on the quality of care for each and every patient. Therefore, the team at Sujay’s dental care are an experienced and qualified dentist who makes sure the clinic provides the highest standard of quality and services to every patient.</p>
+		          </div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Well Experience Dentist</h3>
+	      					<p>A good dentist can tell you about your overall health just by looking at your mouths such as nutritional deficiencies, illnesses, and other infections. Things such as the color of your tongue, bad breath, and dry mouth can tell a lot about your health issues which may affect your entire body</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>High Technology Facilities</h3>
+	      					<p>Being Karnataka’s 1st NABH Accredited Dental Clinic, we have adhered to the benchmarks established by NABH for the progress of the healthcare industry and providing the high standard services to the patient.The commitment which we provide in implementing and following the strict list of over 600 distinct elements is what makes our dental clinic different from others.Here you will find the guaranteed quality of care and safety for each and every patient.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Comfortable Clinics</h3>
+	      					<p>We believe in ‘Atithi Devo Bhava.’.‘Atithi Devo Bhava’, which translates to “a guest is akin to god”, is considered as one of India’s most ancient sayings.Our organisation will ensure that you will have a  world-class dental care treatment at an affordable price along with an incredible tourism in our country.</p>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </section>
+
+
+    <section class="ftco-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Meet Our Experience Dentist</h2>
+            <p>Assured Quality of Care and Safety Just For You and Your Smile, Right Here!
+            At Sujay’s Dental Care, we believe in providing the best dental care treatment to our patients.Under the strong & able leadership of Dr.Sujay Gopal, our dedicated team of highly qualified and experienced team of dentists is ready to provide you, a world-class dental treatment with the aid of advanced dental technology.
+</p>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({%  static 'website/images/dcare.jpg' %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Sujay Gopal (BDS, FICOI)</a></h3>
+      					<span class="position">Founder and Director</span>
+      					<div class="text">
+	        				<p>“Healthy Esthethic Smile Is Our Mantra”</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({%  static 'website/images/pic_1.jpg'  %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Eshani Kaul</a></h3>
+      					<span class="position">Dentist</span>
+      					<div class="text">
+	        				<p>Assured Quality of Care and Safety Just For You and Your Smile, Right Here!</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({%  static 'website/images/pic_2.jpg'  %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Rohith Ganiga</a></h3>
+      					<span class="position">Dentist</span>
+      					<div class="text">
+	        				<p>A smile is the light of personality</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url({%  static 'website/images/pic_3.jpg' %});"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Pragya Kaul</a></h3>
+      					<span class="position">Dentist</span>
+      					<div class="text">
+	        				<p>A smile is the best makeup that can change your looks and your heart.</p>
+	        				<ul class="ftco-social">
+			              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+			              <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            </ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="row  mt-5 justify-conten-center">
+        	<div class="col-md-8 ftco-animate">
+        		<p>At Sujay’s Dental Care, we believe in providing the best dental care treatment to our patients.
+</p>
+        	</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({%  static 'website/images/bg_1.jpg'  %});" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row d-flex align-items-center">
+    			<div class="col-md-3 aside-stretch py-5">
+    				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
+	            <h2 class="mb-3">Achievements</h2>
+	            <p>At Sujay’s Dental Care, we believe in providing the best dental care treatment to our patients.
+                Under the strong & able leadership of Dr.Sujay Gopal, our dedicated team of highly qualified and experienced team of dentists is ready to provide you, a world-class dental treatment with the aid of advanced dental technology.</p>
+	          </div>
+    			</div>
+    			<div class="col-md-9 py-5 pl-md-5">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="14">0</strong>
+		                <span>Years of Experience</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4500">0</strong>
+		                <span>Qualified Dentist</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4200">0</strong>
+		                <span>Happy Smiling Customer</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="320">0</strong>
+		                <span>Patients Per Year</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	      </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Our Best Pricing</h2>
+            <p>Sujay’s Dental care has received the most prominent recognition from National Accreditation Board of Hospitals and Healthcare (NABH), a constituent board of Quality Council of India, New Delhi, for its quality and high standard services. Being Karnataka’s 1st NABH Accredited Dental Clinic, we have adhered to the benchmarks established by NABH for the progress of the healthcare industry and providing the high standard services to the patient.</p>
+          </div>
+        </div>
+    		<div class="row">
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Basic</h3>
+	        			<p><span class="price">$24.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Standard</h3>
+	        			<p><span class="price">$34.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry active pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Premium</h3>
+	        			<p><span class="price">$54.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Platinum</h3>
+	        			<p><span class="price">$89.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
+        		</div>
+        	</div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <h2>Subcribe to our Newsletter</h2>
+              <p>At Sujay’s Dental Care, we believe in providing the best dental care treatment to our patients.
+</p>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Testimony</h2>
+            <span class="subheading">Our Happy Customer Says</span>
+          </div>
+        </div>
+        <div class="row justify-content-center ftco-animate">
+          <div class="col-md-8">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({%  static 'website/images/person_1.jpg'  %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Best Dental Care Centre in Bangalore</p>
+                    <p class="name">Dennis Green</p>
+                    <span class="position">Marketing Manager</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({%  static 'website/images/person_2.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">At Sujay’s Dental Care, we believe in providing the best dental care treatment to our patients.
+</p>
+                    <p class="name">Dennis Green</p>
+                    <span class="position">Interface Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({%  static 'website/images/person_3.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Under the strong & able leadership of Dr.Sujay Gopal, our dedicated team of highly qualified and experienced team of dentists is ready to provide you, a world-class dental treatment with the aid of advanced dental technology.</p>
+                    <p class="name">Dennis Green</p>
+                    <span class="position">UI Designer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({%  static 'website/images/person_1.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="name">Dennis Green</p>
+                    <span class="position">Web Developer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({%  static 'website/images/person_1.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Under the strong & able leadership of Dr.Sujay Gopal, our dedicated team of highly qualified and experienced team of dentists is ready to provide you, a world-class dental treatment with the aid of advanced dental technology..</p>
+                    <p class="name">Dennis Green</p>
+                    <span class="position">System Analytics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-gallery">
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({%  static 'website/images/dcare.jpg'  %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({%  static 'website/images/gallery-2.jpg'  %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({%  static 'website/images/gallery-3.jpg'  %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url({%  static 'website/images/gallery-4.jpg'  %});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-search"></span>
+    					</div>
+						</a>
+					</div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Latest Blog</h2>
+            <p>At Sujay’s Dental Care, we believe in providing the best dental care treatment to our patients.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20" style="background-image: 
+              url({%  static 'website/images/image_1.jpg'  %});">
+              </a>
+              <div class="text d-flex py-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Sep. 20, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <div class="desc pl-3">
+	                <h3 class="heading"><a href="#">GET WORLD CLASS DENTAL TREATMENT! TODAY!</a></h3>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry" data-aos-delay="100">
+              <a href="blog-single.html" class="block-20" style="background-image: url({%  static 'website/images/image_2.jpg'  %});">
+              </a>
+              <div class="text d-flex py-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Sep. 20, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <div class="desc pl-3">
+	                <h3 class="heading"><a href="#">Here you will find the guaranteed quality of care and safety for each and every patient.</a></h3>
+	              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry" data-aos-delay="200">
+              <a href="blog-single.html" class="block-20" style="background-image: url({%  static 'website/images/image_3.jpg'  %});">
+              </a>
+              <div class="text d-flex py-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Sep. 20, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <div class="desc pl-3">
+	                <h3 class="heading"><a href="#">NABH Accredited Dental Clinic</a></h3>
+	              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-quote">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-6 pr-md-5 aside-stretch py-5 choose">
+    				<div class="heading-section heading-section-white mb-5 ftco-animate">
+	            <h2 class="mb-2">DentaCare Procedure &amp; High Quality Services</h2>
+	          </div>
+	          <div class="ftco-animate">
+	          	<p>Sujay’s Dental care has received the most prominent recognition from National Accreditation Board of Hospitals and Healthcare (NABH), a constituent board of Quality Council of India, New Delhi, for its quality and high standard services. Being Karnataka’s 1st NABH Accredited Dental Clinic, we have adhered to the benchmarks established by NABH for the progress of the healthcare industry and providing the high standard services to the patient.</p>
+	          	<ul class="un-styled my-5">
+	          		<li><span class="icon-check"></span>Consectetur adipisicing elit</li>
+	          		<li><span class="icon-check"></span>Adipisci repellat accusamus</li>
+	          		<li><span class="icon-check"></span>Tempore reprehenderit vitae</li>
+	          	</ul>
+	          </div>
+    			</div>
+    			<div class="col-md-6 py-5 pl-md-5">
+    				<div class="heading-section mb-5 ftco-animate">
+	            <h2 class="mb-2">Get a Free Quote</h2>
+	          </div>
+	          <form action="#" class="ftco-animate">
+	          	<div class="row">
+	          		<div class="col-md-6">
+		              <div class="form-group">
+		                <input type="text" class="form-control" placeholder="Full Name">
+		              </div>
+	              </div>
+	              <div class="col-md-6">
+		              <div class="form-group">
+		                <input type="text" class="form-control" placeholder="Email">
+		              </div>
+	              </div>
+	              <div class="col-md-6">
+	              	<div class="form-group">
+		                <input type="text" class="form-control" placeholder="Phone">
+		              </div>
+		            </div>
+	              <div class="col-md-6">
+	              	<div class="form-group">
+		                <input type="text" class="form-control" placeholder="Website">
+		              </div>
+		            </div>
+		            <div class="col-md-12">
+		              <div class="form-group">
+		                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+		              </div>
+		            </div>
+		            <div class="col-md-12">
+		              <div class="form-group">
+		                <input type="submit" value="Get a Quote" class="btn btn-primary py-3 px-5">
+		              </div>
+	              </div>
+              </div>
+            </form>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+		
+		<div id="map"></div>
+
+    {% endblock %}
